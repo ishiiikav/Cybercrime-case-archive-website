@@ -1,0 +1,78 @@
+/* ============================================================
+   BASE.CSS — Variables, Reset, Body, Animations, Scrollbar
+   ============================================================ */
+
+:root {
+  --bg:           #050a0e;
+  --bg2:          #080f15;
+  --panel:        #0a1520;
+  --border:       #0f2a3a;
+  --accent:       #00d4ff;
+  --accent2:      #ff3c5c;
+  --accent3:      #39ff14;
+  --warn:         #ffb800;
+  --text:         #8ab8cc;
+  --text-bright:  #c8e8f4;
+  --dim:          #2a4a5a;
+  --green-badge:  #00cc55;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Share Tech Mono', monospace;
+  min-height: 100vh;
+  overflow-x: hidden;
+  animation: flicker 8s infinite;
+}
+
+/* CRT Scanlines */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.08) 2px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* Animations */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  92%       { opacity: 1; }
+  93%       { opacity: 0.92; }
+  94%       { opacity: 1; }
+  96%       { opacity: 0.97; }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateX(-10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); }
+::-webkit-scrollbar-thumb:hover { background: var(--dim); }

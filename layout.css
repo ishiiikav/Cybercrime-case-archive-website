@@ -1,0 +1,163 @@
+/* ============================================================
+   LAYOUT.CSS — Header, Footer, Container, Page Header, Filters
+   ============================================================ */
+
+/* ── Header ── */
+header {
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  background: var(--bg2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+.logo span    { color: var(--accent2); }
+.logo-sub {
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+  color: var(--dim);
+  margin-top: 2px;
+}
+
+.header-status {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--dim);
+}
+
+.status-live { color: var(--accent3); }
+.status-live::before {
+  content: '●';
+  display: inline-block;
+  margin-right: 0.4em;
+  animation: blink 1s step-end infinite;
+}
+
+/* ── Container ── */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ── Page Header ── */
+.page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-title {
+  font-family: 'VT323', monospace;
+  font-size: 3.5rem;
+  color: var(--text-bright);
+  line-height: 1;
+  text-shadow: 0 0 30px rgba(200, 232, 244, 0.3);
+}
+
+.page-subtitle {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--dim);
+  margin-top: 0.5rem;
+}
+
+.case-count {
+  text-align: right;
+  font-size: 0.65rem;
+  color: var(--dim);
+  letter-spacing: 0.1em;
+}
+
+.case-count strong {
+  display: block;
+  font-family: 'VT323', monospace;
+  font-size: 2.5rem;
+  color: var(--accent);
+  line-height: 1;
+}
+
+/* ── Filters ── */
+.filters {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--dim);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(0, 212, 255, 0.05);
+}
+
+/* ── Cases Grid ── */
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ── Footer ── */
+footer {
+  border-top: 1px solid var(--border);
+  margin-top: 4rem;
+  padding: 1.5rem 2rem;
+  background: var(--bg2);
+}
+
+.footer-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.6rem;
+  color: var(--dim);
+  letter-spacing: 0.1em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .cases-grid   { grid-template-columns: 1fr; }
+  .page-title   { font-size: 2.5rem; }
+  .footer-inner { flex-direction: column; gap: 0.5rem; text-align: center; }
+}

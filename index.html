@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CYBERCRIMES DIVISION — CASE ARCHIVE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+
+  <!-- SCANLINES OVERLAY (via CSS ::before on body) -->
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        CYBER<span>CRIMES</span> DIVISION
+        <div class="logo-sub">NATIONAL DIGITAL FORENSICS BUREAU</div>
+      </div>
+      <div class="header-status">
+        <span class="status-live">SYSTEM ONLINE</span>
+        <span id="clock">--:--:--</span>
+        <span>CLEARANCE: LVL-3</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+    <div class="page-header">
+      <div>
+        <div class="page-title">CASE ARCHIVE</div>
+        <div class="page-subtitle">// CLASSIFIED CYBERCRIME INVESTIGATIONS — INTERNAL ACCESS ONLY</div>
+      </div>
+      <div class="case-count">
+        <strong id="visibleCount">6</strong>
+        ACTIVE RECORDS
+      </div>
+    </div>
+
+    <!-- FILTERS -->
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterCases('all', this)">ALL CASES</button>
+      <button class="filter-btn" onclick="filterCases('OPEN', this)">⬛ OPEN</button>
+      <button class="filter-btn" onclick="filterCases('CLOSED', this)">⬛ CLOSED</button>
+      <button class="filter-btn" onclick="filterCases('CLASSIFIED', this)">⬛ CLASSIFIED</button>
+    </div>
+
+    <!-- CASES GRID -->
+    <div class="cases-grid" id="casesGrid"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span>NDFB INTERNAL SYSTEMS v4.7.2 — FOR AUTHORIZED PERSONNEL ONLY</span>
+      <span>ALL DATA IS FICTIONAL — TRAINING PURPOSES ONLY</span>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <div class="modal-title-block">
+          <div class="modal-case-id" id="modalCaseId"></div>
+          <div class="modal-title" id="modalTitle"></div>
+        </div>
+        <button class="modal-close" onclick="document.getElementById('modalOverlay').classList.remove('open')">✕</button>
+      </div>
+      <div class="modal-tabs">
+        <button class="tab-btn active" onclick="switchTab('overview', this)">OVERVIEW</button>
+        <button class="tab-btn" onclick="switchTab('timeline', this)">TIMELINE</button>
+        <button class="tab-btn" onclick="switchTab('evidence', this)">EVIDENCE</button>
+        <button class="tab-btn" onclick="switchTab('suspects', this)">SUSPECTS</button>
+        <button class="tab-btn" onclick="switchTab('logs', this)">SYSTEM LOGS</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="data/cases.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
