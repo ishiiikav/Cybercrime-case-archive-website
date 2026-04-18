@@ -1,22 +1,52 @@
-**Cybercrime Case Archive — Interactive Forensics Dashboard**
+**Cybercrime Case Archive — Portfolio Description**
 
-A fictional cybercrime investigation archive simulating an internal case management system for a national digital forensics bureau.
+---
 
-**Tech Stack**
-Pure HTML, CSS, vanilla JavaScript — no frameworks. Google Fonts only.
+**What It Is**
+A fictional cybercrime investigation dashboard that simulates an internal case management system for a national digital forensics bureau. Built entirely for portfolio and educational purposes — all cases, suspects, and data are fabricated.
 
-**Design**
-Dark CRT terminal aesthetic. Scanline overlay, screen flicker, neon cyan/red/green accents on deep navy-black. Orbitron, VT323, and Share Tech Mono typography. Fully responsive.
+---
 
-**Main Screen**
-Case grid with filter bar (All / Open / Closed / Classified). Each card shows case ID, title, category, status badge, description, metadata, evidence count, and tags. Live system clock in header.
+**Languages & Technologies**
+- HTML5
+- CSS3 (custom properties, grid, keyframe animations)
+- Vanilla JavaScript (no frameworks, no libraries)
+- Google Fonts (Orbitron, VT323, Share Tech Mono)
 
-**Case Detail Modal — 5 Tabs**
-- **Overview** — Summary, animated severity meter, lead agent, date, tags
-- **Timeline** — Chronological event log with timestamps and staggered animations
-- **Evidence** — File manifest with descriptions, metadata, and status labels (Verified / Pending / Corrupted)
-- **Suspects** — Profile cards with alias, handle, behavioral notes, threat level
-- **Logs** — Scrollable terminal output with color-coded severity (INFO / WARN / ERROR / CRITICAL), blinking animation on critical entries
+---
+
+**Screens & UI**
+
+**1. Main Archive Screen**
+- Sticky header with logo, live UTC clock, and clearance level indicator
+- Page title with active record counter
+- Filter bar to sort cases by status: All / Open / Closed / Classified
+- Responsive card grid displaying all cases
+
+**2. Case Cards**
+Each card displays: case ID, category, title, status badge (Open / Closed / Classified), description, date opened, lead agent, severity score, suspect count, classification tags, evidence file count, and timeline event count
+
+**3. Case Detail Modal (5 Tabs)**
+- **Overview** — full description, animated severity meter bar, all metadata, status badge, tags
+- **Timeline** — chronological event log, timestamps, staggered entry animations, diamond node markers
+- **Evidence** — file manifest with icons, descriptions, file metadata, and status labels (Verified / Pending / Corrupted)
+- **Suspects** — profile cards with avatar, alias, handle, behavioral notes, color-coded threat level (High / Med / Low)
+- **System Logs** — scrollable terminal with color-coded severity rows (INFO / WARN / ERROR / CRITICAL), blinking animation on critical entries
+
+---
+
+**Design & Visual Features**
+- Dark CRT terminal aesthetic
+- Full-screen scanline overlay
+- Screen flicker animation
+- Neon cyan, red, and green accents on deep navy-black background
+- Hover glow effects on cards
+- Staggered card entrance animations
+- Mobile responsive layout
+
+---
 
 **Cases Included**
-6 fictional cases: nation-state grid intrusion, crypto laundering network, classified espionage, AI disinformation operation, hospital ransomware attack, mobile banking trojan.
+6 fictional cases across categories: nation-state power grid intrusion, crypto laundering network, classified pharmaceutical espionage, AI disinformation operation, hospital ransomware attack, mobile banking trojan
+
+---
